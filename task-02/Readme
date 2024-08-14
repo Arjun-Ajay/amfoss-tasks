@@ -1,0 +1,14 @@
+Part-1:
+Following the hints given in the readme file of Terminal-Chaos, I sought shelter in the Eolian caves.I used the "find ./*" to get a list of all the files and their locations. 
+Then I searched the list until I found the path which leads to the parchment and opened it using the "cat" command. VOILA, the first part of the code was attained.
+
+Part-2:
+I switched to the Light Realm branch and again used "cd" command to move back to Eolian Cave directory. In order to brew a holy spell, I used grep -lR "holy" to get a list of all the files which contain the word "holy" and then used 
+grep -lR "good" to get a list of all the files containing the word "good". Then I checked for names which appear in both lists,i.e, contained both "holy and "good". Moonbloom and Mistveil were the two herbs I needed. I then followed 
+the steps specified in the github page to create the holy spell.
+
+I used "find" command to seek out the location of the boss, started the fight using "Python3" command, parried his blows soulslike style and used to holy spell to beat the boss(Cool Boss fight btw). Upon being defeated, he dropped Light book which 
+contained the second part of the code. It also dropped the "Celestial Veil Amulet", which gave me the code needed to open the chests in the dark realm-1 and dark realm-2.
+
+Part-3:
+
