@@ -97,7 +97,7 @@ async def reading_list_command(update: Update, context:ContextTypes.DEFAULT_TYPE
     reply_markup=InlineKeyboardMarkup(buttons)
     await update.message.reply_text("Choose an action: ",reply_markup=reply_markup)
 
-def update_reading_list_docx(reading_list, file_path):
+def update_reading_list_docx(reading_list, docx_file):
     doc=Document()
     doc.add_heading("READING LIST",level=0)
     if not reading_list:
@@ -105,11 +105,11 @@ def update_reading_list_docx(reading_list, file_path):
     else:
         for book in reading_list:
             doc.add_paragraph(book)
-    doc.save(file_path)
-    print("Document saved to file_path")
+    doc.save(docx_file)
+    print("Document saved")
 
 reading_list=[]
-file_path="path_to_reading_list.docx"
+docx_file="reading_list.docx"
 
 async def button_handler(update:Update, context:ContextTypes.DEFAULT_TYPE):
     query=update.callback_query
@@ -121,7 +121,7 @@ async def button_handler(update:Update, context:ContextTypes.DEFAULT_TYPE):
         if book_name!="No name":
             reading_list.append(book_name)
             context.user_data["reading_list"]=reading_list
-            update_reading_list_docx(reading_list, file_path)
+            update_reading_list_docx(reading_list, docx_file)
             await query.edit_message_text(text=f"{book_name} has been added to your reading_list")
         else:
             await query.edit_message_text(text="You didn't tell me the book name. Try again")
@@ -130,13 +130,13 @@ async def button_handler(update:Update, context:ContextTypes.DEFAULT_TYPE):
         if book_name in reading_list:
             reading_list.remove(book_name)
             context.user_data["reading_list"]=reading_list
-            update_reading_list_docx(reading_list, file_path)
+            update_reading_list_docx(reading_list, docx_file)
             await query.edit_message_text(text=f"{book_name} has been removed from your reading list")
         else:
             await query.edit_message_text(text=f"{book_name} was not found in your reading list")
     elif query.data=="view_reading_list":
-        if os.path.exists(file_path):
-            await query.message.reply_document(document=open(file_path,'rb' ),filename="reading_list.docx")
+        if os.path.exists(docx_file):
+            await query.message.reply_document(document=open(docx_file,'rb' ),filename="reading_list.docx")
         else:
             await query.message.reply_text("The reading list file does not exist.")
 
