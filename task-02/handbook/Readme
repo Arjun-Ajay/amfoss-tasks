@@ -3,12 +3,27 @@ Following the hints given in the readme file of Terminal-Chaos, I sought shelter
 Then I searched the list until I found the path which leads to the parchment and opened it using the "cat" command. VOILA, the first part of the code was attained.
 
 Part-2:
-I switched to the Light Realm branch and again used "cd" command to move back to Eolian Cave directory. In order to brew a holy spell, I used grep -lR "holy" to get a list of all the files which contain the word "holy" and then used 
-grep -lR "good" to get a list of all the files containing the word "good". Then I checked for names which appear in both lists,i.e, contained both "holy and "good". Moonbloom and Mistveil were the two herbs I needed. I then followed 
+I switched to the Light Realm branch and again used "cd" command to move back to Eolian Cave directory. In order to brew a holy spell, I used 'grep -lR "holy"' to get a list of all the files which contain the word "holy" and then used 
+'grep -lR "good"' to get a list of all the files containing the word "good". Then I checked for names which appear in both lists,i.e, contained both "holy and "good". Moonbloom and Mistveil were the two herbs I needed. I then followed 
 the steps specified in the github page to create the holy spell.
 
-I used "find" command to seek out the location of the boss, started the fight using "Python3" command, parried his blows soulslike style and used to holy spell to beat the boss(Cool Boss fight btw). Upon being defeated, he dropped Light book which 
-contained the second part of the code. It also dropped the "Celestial Veil Amulet", which gave me the code needed to open the chests in the dark realm-1 and dark realm-2.
+I used "find" command to seek out the location of the boss, started the fight using "Python3" command, parried his blows soulslike style and used to holy spell to beat the boss(Cool Boss fight btw). Upon being defeated, he dropped
+Light book which contained the second part of the code. It also dropped the "Celestial Veil Amulet", which gave me the code needed to open the chests in the dark realm-1 and dark realm-2.
 
 Part-3:
+I used "git switch" command to switch to dark realm-1. Found the chest location using "find" and "tree" commands.I used the Celestial Veil code to open the chest and obtain the first darkbook code. 
+
+After obtaining the first code, I switched to dark-realm-2. Found the chest hidden there using a combination of "find" and "tree" commands, and opened them using the celestial Veil code to obtain the second darkbook code.
+
+Part-4:
+I combined the parchment code,Lightbook code, Darkbook-1 code and Darkbook-2 code to finally obtain a new longer code which i saved onto a new file. I then used "base64 -d <filename>" command to decode it, which gave me a link to a
+new repository-The Godsuite. 
+
+I cloned this repository to my system.
+
+Part-5:
+I used "git log" command to view the commit history of the repository. After reading through each of them using "git show" command, I was able to find a code hiiden in one of the commits.
+The newly obtained code looked similar to the previous one I found. So, i used "base64 -d" command to decode it and got a link to a new repository- To the stars and realms unseen.
+
+I cloned the new repository to my system and upon using "ls" command, discovered a .py file called "victory.py" inside it. I used "python3 victory.py --run" command to run the file and obtain the victory screen.
 
