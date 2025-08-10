@@ -1,0 +1,1 @@
+I really enjoyed learning about the discord.py library.I had some issues with the commands I made but was able to debug them relatively quickly. I always did wonder how these discord bots were made and now I do. Overall a pretty fun task.
