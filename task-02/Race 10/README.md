@@ -1,0 +1,1 @@
+I was thinking the wrong way from the start. Took me way longer than it should've for it to click in my head.
