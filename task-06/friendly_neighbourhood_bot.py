@@ -20,12 +20,13 @@ FORBIDDEN_KEYWORDS=["villainous spam","unauthorized link","off-topic disruption"
 
 async def auto_delete(msg):
     time_in_secs=30 #CHANGE TO CONTROL THE TIME UNTIL DELETION (24hr - 86400sec)
-    #print(msg.pinned)
+    #print(msg.pinned) #Final pin status
+    asyncio.sleep(30)
     if msg.pinned==False:
         await asyncio.sleep(time_in_secs)
         await msg.delete()
 
-bot = commands.Bot(command_prefix='??',description=mytexts.description,intents=intents)
+bot = commands.Bot(command_prefix='??',description=mytexts.description,intents=intents,help_command=None)
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user.name}.\nBot is now running")
@@ -56,6 +57,7 @@ async def on_message(msg):
             await msg.author.send("Keep all messages and activities on the server civil and respectful. " \
             "Our code of conduct promotes constructive communication to provide a safe environment for all members of the server.\n"\
             "Further violation of our code of conduct will result in a permanent ban from the server")
+            
     await bot.process_commands(msg)
 
 
@@ -85,6 +87,8 @@ async def wisdom(ctx,*,content:str):
     else:
         await ctx.send(f"{ctx.author.mention} - Invalid command usage. Use '??help' for more information")
 
-#NOTE: Update command descriptions
-#NOTE: Implement pinned msg persistance on #announcements
+@bot.command()
+async def help(ctx):
+    await ctx.send(mytexts.HELP)
+
 bot.run(token)
