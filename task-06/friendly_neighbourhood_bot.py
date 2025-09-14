@@ -54,10 +54,7 @@ async def on_message(msg):
         if keyword in msg.content.lower(): 
             await msg.delete()
             await msg.channel.send(f"{msg.author.mention} - chaos-inducing messages and activities are not permitted on this server. You have been warned.")
-            await msg.author.send("Keep all messages and activities on the server civil and respectful. " \
-            "Our code of conduct promotes constructive communication to provide a safe environment for all members of the server.\n"\
-            "Further violation of our code of conduct will result in a permanent ban from the server")
-            
+            await msg.author.send(mytexts.LIGHT_WARNING)
     await bot.process_commands(msg)
 
 

@@ -17,3 +17,19 @@ CONTACTS="‣ Dr. Evelyn Reed, Dean of Students\n\t‣Email: ereed@midtown.edu \
     "‣ Prof. Alan Finch, Head of Computer Science Department\n\t‣Email: afinch@midtown.edu\n\n"\
     "‣ Mr. Ben Carter, Career Services Director\n\t‣Email: bcarter@midtown.edu\n\n"\
     "‣ Dr. Sophia Chen, Head Counselor, Health & Wellness\n\t‣Email: schen@midtown.edu"
+
+HELP=f"{description}\n\n"\
+    "General Commands:\n"\
+    "   ??wisdom resources: Get the general resources\n"\
+    "   ??wisdom rules    : Get to know the general rules\n"\
+    "   ??wisdom contacts : Get to know the general contacts\n"\
+    "   ??help  : Brings up this menu\n"\
+    "\n"\
+    "Admin/Faculty Commands:\n"\
+    "   ??bugle : It is used to post a message on the #announcement channel\n"\
+    "\n"\
+    "For further help, contact a faculty member"
+
+LIGHT_WARNING="Keep all messages and activities on the server civil and respectful. " \
+    "Our code of conduct promotes constructive communication to provide a safe environment for all members of the server.\n"\
+    "Further violation of our code of conduct will result in a permanent ban from the server"
